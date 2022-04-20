@@ -78,6 +78,7 @@ rng = hk.PRNGSequence(42)
 for x in grid_samples():
     dist, _ = encode(params, state, None, x)
     samples = dist.multi_sample(next(rng), 10)
+    print(x['image'])
     for s in samples:
         xs.append(s[0])
         ys.append(s[1])
